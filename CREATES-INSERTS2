@@ -1,0 +1,209 @@
+SELECT  carMakes.Make, carModel.Name AS Model, engine.Name AS Engine FROM carMakes INNER JOIN 
+carModel ON carMakes.id=carModel.id INNER JOIN engine ON carModel.id=engine.id; 
+        
+        
+
+        
+CREATE TABLE makes (
+    id INT(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    make VARCHAR(50) NOT NULL,
+);
+
+INSERT INTO makes (id, make)
+    VALUES 
+    ('', 'Chevrolet'),
+    ('', 'Jeep'),
+    ('', 'Dodge'),
+    ('', 'Ford'),
+    ('', 'GMC');
+            
+            
+
+
+CREATE TABLE models (
+    id INT(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    model VARCHAR(50) NOT NULL,
+    make INT(6) NOT NULL,
+);
+
+
+INSERT INTO model (id, model, make)
+VALUES 
+    ('', 'Camaro', '1'),
+    ('', 'Corvette', '1'),
+    ('', 'Equinox', '1'),
+    ('', 'Siverado 1500', '1'),
+    ('', 'Tahoe', '1'),
+    ('', 'Cherokee', '2'),
+    ('', 'Grand Cherokee', '2'),
+    ('', 'Renegade', '2'),
+    ('', 'Wrangler', '2'),
+    ('', 'Challenger', '3'),
+    ('', 'Charger', '3'),
+    ('', 'Dart', '3'),
+    ('', 'Durango', '3'),
+    ('', 'Viper', '3'),
+    ('', 'Edge', '4'),
+    ('', 'Escape', '4'),
+    ('', 'Explorer', '4'),
+    ('', 'F-150', '4'),
+    ('', 'Taurus', '4'),
+    ('', 'Acadia', '5'),
+    ('', 'Canyon', '5'),
+    ('', 'Savana 1500', '5'),
+    ('', 'Sierra 1500', '5'),
+    ('', 'Terrain', '5');
+             
+            
+CREATE TABLE engines (
+    id INT(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    size VARCHAR(50) NOT NULL,
+    model INT(6) NOT NULL,
+    make INT(6) NOT NULL,
+);         
+            
+
+
+INSERT INTO engines (id, size, model, make)
+VALUES 
+    ('', '3.6L, V-6', '1', '1'),
+    ('', '6.2L, V-8', '1', '1'),
+    ('', '7.0L, V-8', '1', '1'),
+    ('', '6.2L, V-8', '1', '1'),
+    ('', '6.2L, V-8', '2', '1'),
+    ('', '6.7L, V-8', '2', '1'),
+    ('', '2.4L, I-4', '3', '1'),
+    ('', '3.6L, V-6', '3', '1'),
+    ('', '5.3L, V-8', '4', '1'),
+    ('', '6.2L, V-8', '4', '1'),
+    ('', '4.3L, V-6', '4', '1'),
+    ('', '5.3L, V-8', '5', '1'),
+    ('', '2.4L, I-4', '6', '2'),
+    ('', '3.2L, V-6', '6', '2'),
+    ('', '3.0L, V-6', '7', '2'),
+    ('', '3.6L, V-6', '7', '2'),
+    ('', '6.4L, V-8', '7', '2'),
+    ('', '5.7L, V-8', '7', '2'),
+    ('', '2.4L, I-4', '8', '2'),
+    ('', '1.4L, I-4', '8', '2'),
+    ('', '3.6L, V-6', '9', '2'),
+    ('', '6.2L, V-8', '10', '2'),
+    ('', '5.7L, V-8', '10', '3'),
+    ('', '3.6L, V-6', '10', '3'),
+    ('', '6.4L, V-8', '10', '3'),
+    ('', '5.7L, V-8', '10', '3'),
+    ('', '6.2L, V-8', '11', '3'),
+    ('', '3.6L, V-6', '11', '3'),
+    ('', '6.4L, V-8', '11', '3'),
+    ('', '5.7L, V-8', '11', '3'),
+    ('', '2.4L, I-4', '12', '3'),
+    ('', '2.0L, I-4', '12', '3'),
+    ('', '1.4L, I-4', '12', '3'),
+    ('', '3.6L, V-6', '13', '3'),
+    ('', '5.7L, V-8', '13', '3'),
+    ('', '8.4L, V-10', '14', '3'),
+    ('', '3.5L, V-6', '15', '3'),
+    ('', '2.0L, I-4', '15', '4'),
+    ('', '2.7L, V-6', '15', '4'),
+    ('', '1.6L, I-4', '16', '4'),
+    ('', '2.0L, I-4', '16', '4'),
+    ('', '2.5L, I-4', '16', '4'),
+    ('', '2.0L, I-4', '17', '4'),
+    ('', '3.5L, V-6', '17', '4'),
+    ('', '3.5L, V-6', '18', '4'),
+    ('', '5.0L, V-8', '18', '4'),
+    ('', '3.5L, V-6', '18', '4'),
+    ('', '2.7L, V-6', '18', '4'),
+    ('', '2.0L, I-4', '19', '4'),
+    ('', '3.5L, V-6', '19', '4'),
+    ('', '3.6L, V-6', '20', '4'),
+    ('', '3.6L, V-6', '21', '5'),
+    ('', '2.5L, I-4', '21', '5'),
+    ('', '5.3L, V-8', '22', '5'),
+    ('', '4.3L, V-6', '22', '5'),
+    ('', '5.3L, V-8', '23', '5'),
+    ('', '6.2L, V-8', '23', '5'),
+    ('', '4.3L, V-6', '23', '5'),
+    ('', '2.4L, I-4', '24', '5'),
+    ('', '3.6L, V-6', '24', '5');
+            
+            
+            
+            
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO carMakes (makeID, Make, Model, Engine)
+    VALUES ('','Chevrolet','Camaro','3.6L, V-6'),
+            ('','Chevrolet','Camaro','6.2L, V-8'),
+            ('','Chevrolet','Camaro','7.0L, V-8'),
+            ('','Chevrolet','Camaro','6.2L, V-8'),
+            ('','Chevrolet','Corvette','6.2L, V-8'),
+            ('','Chevrolet','Corvette','6.7L, V-8'),
+            ('','Chevrolet','Equinox','2.4L, I-4'),
+            ('','Chevrolet','Equinox','3.6L, V-6'),
+            ('','Chevrolet','Siverado 1500','5.3L, V-8'),
+            ('','Chevrolet','Siverado 1500','6.2L, V-8'),
+            ('','Chevrolet','Siverado 1500','4.3L, V-6'),
+            ('','Chevrolet','Tahoe','5.3L, V-8'),
+            ('','Jeep','Cherokee','2.4L, I-4'),
+            ('','Jeep','Cherokee','3.2L, V-6'),
+            ('','Jeep','Grand Cherokee','3.0L, V-6'),
+            ('','Jeep','Grand Cherokee','3.6L, V-6'),
+            ('','Jeep','Grand Cherokee','6.4L, V-8'),
+            ('','Jeep','Grand Cherokee','5.7L, V-8'),
+            ('','Jeep','Renegade','2.4L, I-4'),
+            ('','Jeep','Renegade','1.4L, I-4'),
+            ('','Jeep','Wrangler','3.6L, V-6'),
+            ('','Dodge','Challenger','6.2L, V-8'),
+            ('','Dodge','Challenger','5.7L, V-8'),
+            ('','Dodge','Challenger','3.6L, V-6'),
+            ('','Dodge','Challenger','6.4L, V-8'),
+            ('','Dodge','Challenger','5.7L, V-8'),
+            ('','Dodge','Charger','6.2L, V-8'),
+            ('','Dodge','Charger','3.6L, V-6'),
+            ('','Dodge','Charger','6.4L, V-8'),
+            ('','Dodge','Charger','5.7L, V-8'),
+            ('','Dodge','Dart','2.4L, I-4'),
+            ('','Dodge','Dart','2.0L, I-4'),
+            ('','Dodge','Dart','1.4L, I-4'),
+            ('','Dodge','Durango','3.6L, V-6'),
+            ('','Dodge','Durango','5.7L, V-8'),
+            ('','Dodge','Viper','8.4L, V-10'),
+            ('','Ford','Edge','3.5L, V-6'),
+            ('','Ford','Edge','2.0L, I-4'),
+            ('','Ford','Edge','2.7L, V-6'),
+            ('','Ford','Escape','1.6L, I-4'),
+            ('','Ford','Escape','2.0L, I-4'),
+            ('','Ford','Escape','2.5L, I-4'),
+            ('','Ford','Explorer','2.0L, I-4'),
+            ('','Ford','Explorer','3.5L, V-6'),
+            ('','Ford','F-150','3.5L, V-6'),
+            ('','Ford','F-150','5.0L, V-8'),
+            ('','Ford','F-150','3.5L, V-6'),
+            ('','Ford','F-150','2.7L, V-6'),
+            ('','Ford','Taurus','2.0L, I-4'),
+            ('','Ford','Taurus','3.5L, V-6'),
+            ('','GMC','Acadia','3.6L, V-6'),
+            ('','GMC','Canyon','3.6L, V-6'),
+            ('','GMC','Canyon','2.5L, I-4'),
+            ('','GMC','Savana 1500','5.3L, V-8'),
+            ('','GMC','Savana 1500','4.3L, V-6'),
+            ('','GMC','Sierra 1500','5.3L, V-8'),
+            ('','GMC','Sierra 1500','6.2L, V-8'),
+            ('','GMC','Sierra 1500','4.3L, V-6'),
+            ('','GMC','Terrain','2.4L, I-4'),
+            ('','GMC','Terrain','3.6L, V-6');
+            
